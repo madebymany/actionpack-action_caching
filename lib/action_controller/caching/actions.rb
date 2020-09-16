@@ -124,7 +124,8 @@ module ActionController
           content = response.body
         else
           response_body.each do |parts|
-          content << parts
+            content << parts
+          end
         end
 
         if caching_allowed?
