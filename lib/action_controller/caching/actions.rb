@@ -119,7 +119,11 @@ module ActionController
 
       def _save_fragment(name, options)
         content = ""
-        response_body.each do |parts|
+        
+        if response.body.present?
+          content = response.body
+        else
+          response_body.each do |parts|
           content << parts
         end
 
